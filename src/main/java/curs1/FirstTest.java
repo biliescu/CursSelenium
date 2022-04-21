@@ -10,6 +10,7 @@ public class FirstTest {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://keybooks.ro");
+		driver.quit();
 	}
 
 }
