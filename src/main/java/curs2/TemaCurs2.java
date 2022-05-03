@@ -12,8 +12,7 @@ import utils.BaseTest;
 public class TemaCurs2 extends BaseTest {
 
 	@Test
-	public void checkIfElementsAreDisplayed() {
-
+	public void checkIfElementsAreDisplayed() throws InterruptedException {
 		WebElement loginButton = driver
 				.findElement(By.cssSelector("a[class*='popup_link popup_login_link icon-user inited']"));
 		WebElement userNameField = driver.findElement(By.id("log"));
@@ -23,10 +22,10 @@ public class TemaCurs2 extends BaseTest {
 		sa.assertTrue(!userNameField.isDisplayed(), "Username field is still NOT displayed");
 		sa.assertTrue(!passwordField.isDisplayed(), "Password field is still NOT displayed");
 		loginButton.click();
+		Thread.sleep(4000);
 		sa.assertTrue(userNameField.isDisplayed(), "Username field is now displayed");
 		sa.assertTrue(passwordField.isDisplayed(), "Password field is now displayed");
-		
-
+		sa.assertAll();
 	}
 
 }
